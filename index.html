@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+
+
+<input type="text" id="tela"/>
+	<br>
+	<input type="submit" class="button" value="1" onclick="n(1)">
+	<input type="submit" class="button" value="2" onclick="n(2)">
+	<input type="submit" class="button" value="3" onclick="n(3)">
+	<input type="submit" class="button" value="/" onclick="op('/')">
+	<br>
+	<input type="submit" class="button" value="4" onclick="n(4)">
+	<input type="submit" class="button" value="5" onclick="n(5)">
+	<input type="submit" class="button" value="6" onclick="n(6)">
+	<input type="submit" class="button" value="*" onclick="op('*')">
+	<br>
+	<input type="submit" class="button" value="7" onclick="n(7)">
+	<input type="submit" class="button" value="8" onclick="n(8)">
+	<input type="submit" class="button" value="9" onclick="n(9)">
+    <input type="submit" class="button" value="+" onclick="op('+')">
+    <br>
+    <input type="submit" class="button" value="C" onclick="limpar()">
+    <input type="submit" class="button" value="0" onclick="n(0)">
+    <input type="submit" class="button" value="=" onclick="igual()">
+    <input type="submit" class="button" value="-" onclick="op('-')">
+	
+<script>
+
+var n1 = " ";
+var n2 = " ";
+var operacao = " ";
+var resultado = " ";
+var tela = " ";
+
+function n(nx){
+	document.getElementById('tela').value = document.getElementById('tela').value+nx;
+    if (operacao == " "){
+    	n1 = document.getElementById('tela').value;
+    }
+    else {
+    	n2 = document.getElementById('tela').value;
+     }   
+}
+
+
+function op(o){
+	operacao = o;
+    document.getElementById('tela').value = "";
+
+}
+
+function igual(){
+	
+    if (operacao == '+'){
+    	resultado = parseInt(n1) + parseInt(n2);
+        document.getElementById('tela').value = resultado;
+    }
+    if (operacao == '*'){
+    	resultado = parseInt(n1) * parseInt(n2);
+        document.getElementById('tela').value = resultado;
+    }
+	if (operacao == '-'){
+    	resultado = parseInt(n1) - parseInt(n2);
+        document.getElementById('tela').value = resultado;
+        }
+    if (operacao == '/'){
+    	resultado = parseInt(n1) / parseInt(n2);
+        document.getElementById('tela').value = resultado;
+    	}
+   }
+   
+
+function limpar(){
+	document.getElementById('tela').value = "";
+    }
+
+
+
+
+</script>
+</body>
+</html>
